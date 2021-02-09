@@ -132,3 +132,11 @@ LOGIN_REDIRECT_URL = "blog-home"
 # django by default looks for login root in accounts/login we can change that by folowing
 LOGIN_URL = 'login'
 
+# It is a full path to the directory that we like django to store uploaded file
+# for performance reasons these files are stored on the filesystem not on the database
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# It is a public url of that directory (MEDIA_ROOT), sobasically that how we access our media directory
+# through our browser
+MEDIA_URL = '/media/'
+
