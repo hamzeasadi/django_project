@@ -1,3 +1,5 @@
 .idea/
 myenv/
 django_project/__pycache__/
+blog/migrations/__pycache__/
+blog/__pycache__/
