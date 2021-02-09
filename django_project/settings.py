@@ -124,3 +124,10 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+# after you logged in django looks for "http://localhost:8000/accounts/profile/" url
+# we can change it with the following line of code
+LOGIN_REDIRECT_URL = "blog-home"
+
+
+
