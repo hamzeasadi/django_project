@@ -6,6 +6,7 @@ from . import forms as F
 from django.contrib.auth.decorators import login_required
 
 
+
 def registration(request):
     if request.method == 'POST':
         form = F.UserRegistrationForm(request.POST)
@@ -25,5 +26,19 @@ def registration(request):
 @login_required
 def profile(request):
     return render(request, 'users/profile.html')
+
+def profile_update(request):
+    if request.method == 'POST':
+        form = F.UserUpdateForm(request.POST)
+        if form.is_valid():
+            username = form.cleaned_data.get('username')
+            myMessage = f'{username} profile was updated!'
+            messages.success(request, myMessage)
+            return redirect(to='profile')
+    else:
+        form = F.UserUpdateForm()
+
+    return render(request, 'users/profile_update.html', {'form': form})
+
 
 
