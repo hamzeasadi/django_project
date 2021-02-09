@@ -129,5 +129,6 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 # we can change it with the following line of code
 LOGIN_REDIRECT_URL = "blog-home"
 
-
+# django by default looks for login root in accounts/login we can change that by folowing
+LOGIN_URL = 'login'
 

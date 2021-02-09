@@ -3,6 +3,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 from django.shortcuts import redirect
 from . import forms as F
+from django.contrib.auth.decorators import login_required
 
 
 def registration(request):
@@ -20,6 +21,8 @@ def registration(request):
 
     return render(request, 'users/registration.html', {'form': form})
 
+
+@login_required
 def profile(request):
     return render(request, 'users/profile.html')
 
